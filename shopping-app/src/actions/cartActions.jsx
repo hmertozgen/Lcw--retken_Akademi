@@ -24,8 +24,6 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-import { useToast } from "@chakra-ui/react";
-
 export const listCartItems = () => async (dispatch) => {
   let cartData = [];
 

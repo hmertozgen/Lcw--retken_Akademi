@@ -50,7 +50,7 @@ export const listCartItems = () => async (dispatch) => {
 };
 
 export const addProductToCart = (new_cart_item) => async (dispatch) => {
-  const newCartItem = {};
+  // const newCartItem = {};
   const newItemId = nextId();
 
   try {

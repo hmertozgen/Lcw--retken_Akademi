@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { productListReducer } from "./reducers/productReducer";
 import {
-  addItemToCartReducer,
+  // addItemToCartReducer,
   listCartItemsReducer,
 } from "./reducers/cartReducers";
 

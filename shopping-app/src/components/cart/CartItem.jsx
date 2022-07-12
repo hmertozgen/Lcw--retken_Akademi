@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  CartItemStyle,
-  CartDeleteButtonStyle,
-  CartInfoStyle,
-} from "../../styles/CartScreen";
+import { CartItemStyle, CartInfoStyle } from "../../styles/CartScreen";
 import { useDispatch } from "react-redux";
 import { updateCartQty, deleteItemFromCart } from "../../actions/cartActions";
 
@@ -44,11 +40,14 @@ const CartItem = ({ item }) => {
           value={qty}
           onChange={(e) => {
             setQty((prev) => Number(e.target.value));
-            console.log(qty);
-            handleCartQty(item.id, qty + 1);
+            handleCartQty(item.id, Number(e.target.value));
           }}
         />
       </CartInfoStyle>
+
+      <button className="btn btn-info" onClick={() => window.location.reload()}>
+        Update
+      </button>
 
       <button
         className="btn btn-danger"

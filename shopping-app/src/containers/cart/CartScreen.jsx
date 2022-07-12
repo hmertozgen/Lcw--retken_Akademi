@@ -28,20 +28,22 @@ const CartScreen = () => {
       ) : (
         <>
           <PageHeading>Cart</PageHeading>
-          <div className="w-100">
-            <CartContainerStyle>
-              {cartItems.map((item) => (
-                <CartItem item={item} />
-              ))}
-              <div className="cart-items-total-price-name ms-3">
-                Total Price
-                <div className="cart-items-total-price  mb-2">
-                  {totalPrice} $
+          {cartItems.length === 0 ? (
+            <div className="text-center">No items in cart</div>
+          ) : (
+            <div className="w-100">
+              <CartContainerStyle>
+                {cartItems.map((item) => (
+                  <CartItem key={item.id} item={item} />
+                ))}
+                <div className="ms-4">
+                  <h3>Total Price: ${totalPrice}</h3>
+
+                  <button className="btn btn-success mb-3  w-25">BUY</button>
                 </div>
-                <button className="btn btn-success mb-3  w-25">BUY</button>
-              </div>
-            </CartContainerStyle>
-          </div>
+              </CartContainerStyle>
+            </div>
+          )}
         </>
       )}
     </div>

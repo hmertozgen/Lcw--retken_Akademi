@@ -50,9 +50,12 @@ const CartItem = ({ item }) => {
         />
       </CartInfoStyle>
 
-      <CartDeleteButtonStyle onClick={() => handleCartDelete(item.id)}>
+      <button
+        className="btn btn-danger"
+        onClick={() => handleCartDelete(item.id)}
+      >
         Delete
-      </CartDeleteButtonStyle>
+      </button>
     </CartItemStyle>
   );
 };

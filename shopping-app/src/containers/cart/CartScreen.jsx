@@ -5,15 +5,6 @@ import { CartContainerStyle, PageHeading } from "../../styles/CartScreen";
 import { useDispatch, useSelector } from "react-redux";
 import { listCartItems } from "../../actions/cartActions";
 
-// const cartItems = [
-//   {
-//     title: "Amazing Shirt",
-//     price: 1999,
-//     image: "google",
-//     qtyInCart: 1,
-//   },
-// ];
-
 const CartScreen = () => {
   const dispatch = useDispatch();
 
@@ -24,6 +15,10 @@ const CartScreen = () => {
   useEffect(() => {
     dispatch(listCartItems());
   }, [dispatch]);
+  const totalPrice = cartItems.reduce(
+    (price, item) => price + item.qtyInCart * item.price,
+    0
+  );
   return (
     <div>
       {loading ? (
@@ -33,11 +28,20 @@ const CartScreen = () => {
       ) : (
         <>
           <PageHeading>Cart</PageHeading>
-          <CartContainerStyle>
-            {cartItems.map((item) => (
-              <CartItem item={item} />
-            ))}
-          </CartContainerStyle>
+          <div className="w-100">
+            <CartContainerStyle>
+              {cartItems.map((item) => (
+                <CartItem item={item} />
+              ))}
+              <div className="cart-items-total-price-name ms-3">
+                Total Price
+                <div className="cart-items-total-price  mb-2">
+                  {totalPrice} $
+                </div>
+                <button className="btn btn-success mb-3  w-25">BUY</button>
+              </div>
+            </CartContainerStyle>
+          </div>
         </>
       )}
     </div>

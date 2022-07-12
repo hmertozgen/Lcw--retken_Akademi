@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const ProductContainerStyle = styled.div`
   width: 80%;
   margin: 2% auto;
+  text-align: center;
+
   height: 100%;
   border: 1px solid black;
   border-radius: 7px;
@@ -12,7 +14,20 @@ export const ProductContainerStyle = styled.div`
 `;
 
 export const ProductItemStyle = styled.div`
-  width: 300px;
+  width: 70%;
+
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  align-items: center;
+  text-align: center;
+
+  margin: 2% auto;
+  border: 1px solid black;
+  border-radius: 7px;
+
   background-color: ${(props) => (props.primary ? "white" : "#919aa1")};
   margin: 2rem;
   padding: 1rem;
@@ -40,13 +55,14 @@ export const CartAddButton = styled.button`
 `;
 
 export const NavBarStyle = styled.nav`
-  width: 80%;
-  background-color: black;
+  background-color: #a9a9a9;
   height: 150px;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
+  position: sticky;
+
   ul {
     margin: 0;
     padding: 0;

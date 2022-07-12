@@ -47,6 +47,10 @@ export const CartDeleteButtonStyle = styled.button`
 
 export const CartInfoStyle = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
   border-bottom: 1px solid black;
   h3 {
     font-weight: bolder;

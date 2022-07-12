@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^2.2.3",
     "@firebase/firestore": "^3.4.12",
     "@react-firebase/auth": "^0.2.10",
     "@react-firebase/database": "^0.3.11",

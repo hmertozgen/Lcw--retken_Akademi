@@ -19,7 +19,7 @@ const Navbar = () => {
   const [user] = useAuthState(auth);
 
   return (
-    <>
+    <div className="container">
       <NavBarStyle>
         <ul>
           <li>
@@ -90,7 +90,7 @@ const Navbar = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 };
 export default Navbar;

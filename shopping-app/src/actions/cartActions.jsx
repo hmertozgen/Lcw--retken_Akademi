@@ -24,6 +24,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
+import { useToast } from "@chakra-ui/react";
+
 export const listCartItems = () => async (dispatch) => {
   let cartData = [];
 
@@ -60,7 +62,10 @@ export const addProductToCart = (new_cart_item) => async (dispatch) => {
     if (docSnap.exists()) {
       const existItem = docSnap.data();
       alert(existItem.title + " is already in your cart");
-      dispatch({ type: CART_ITEM_ADD_FAIL, payload: "Item already in cart" });
+      dispatch({
+        type: CART_ITEM_ADD_FAIL,
+        payload: "Item already in cart",
+      });
     } else {
       console.log("No item found in cart");
       await setDoc(doc(db, "cartItems", newItemId), {
@@ -120,7 +125,7 @@ export const deleteItemFromCart = (cart_item_id) => async (dispatch) => {
 
     await deleteDoc(doc(db, "cartItems", cart_item_id));
 
-    alert(cart_item_id + " was successfully deleted");
+    alert("item was successfully deleted");
 
     window.location.reload();
 
